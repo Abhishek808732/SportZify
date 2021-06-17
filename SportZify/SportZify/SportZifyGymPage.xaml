@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SportZify.SportZifyGymPage"
+              Visual="Material"
+             xmlns:helpers="clr-namespace:SportZify.Helpers">
+
+
+    <ContentPage.Content>
+        <ScrollView>
+            <ScrollView.Content>
+                <Grid RowDefinitions="300,Auto,Auto,Auto,Auto">
+                    <Image Source="{Binding GymImageURL}"
+                   Grid.Row="0" BackgroundColor="Black"
+                   Aspect="AspectFill"/>
+
+                    <StackLayout Grid.Row="1" >
+                        <Label Text="{Binding GymName}"
+                       HorizontalTextAlignment="Center"
+                       FontSize="Title" TextColor="Black"/>
+
+                        <Label Text="{Binding GymCity}"
+                       HorizontalTextAlignment="Center"
+                       FontSize="Subtitle" TextColor="Black"
+                       />
+                        <Label Text="{Binding GymLocation}"
+                       HorizontalTextAlignment="Center"
+                       FontSize="Subtitle" TextColor="Black"
+                       />
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" Spacing="10"
+                             Grid.Row="2" Padding="10">
+                        <Image Source="{FontImage FontFamily=FontAwesome,
+                                    Color=Black, 
+                                    Glyph={x:Static helpers:IconFont.Cash}}"/>
+
+                        <Label Text="{Binding GymCharge}"
+                           VerticalTextAlignment="Center"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" Spacing="10"
+                             Grid.Row="3" Padding="10">
+                        <Image Source="{FontImage FontFamily=FontAwesome,
+                                    Color=Black, 
+                                    Glyph={x:Static helpers:IconFont.Phone}}"/>
+
+                        <Label Text="{Binding GymContact}"
+                           VerticalTextAlignment="Center"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" 
+                                 HorizontalOptions="Center"
+                                 Spacing="10"
+                             Grid.Row="4">
+
+                        <Button ImageSource="{FontImage FontFamily=FontAwesome,
+                                    Color=White, 
+                                    Glyph={x:Static helpers:IconFont.Youtube}}" 
+                                Text="Explore"
+                                BackgroundColor="#FF5722"
+                                x:Name="GymVideo" Clicked="GymVideo_Clicked"/>
+
+                        <Button ImageSource="{FontImage FontFamily=FontAwesome,
+                                    Color=White, 
+                                    Glyph={x:Static helpers:IconFont.BookAlert}}" 
+                                Text="Book Slot"
+                                BackgroundColor="#FF5722"
+                                x:Name="GymBooking" Clicked="GymBooking_Clicked"/>
+
+                    </StackLayout>
+                </Grid>
+            </ScrollView.Content>
+        </ScrollView>
+
+    </ContentPage.Content>
+
+
+
+</ContentPage>

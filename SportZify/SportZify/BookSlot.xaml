@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SportZify.BookSlot"
+             Visual="Material"
+             Title="Book Slot">
+    <ContentPage.Content>
+        <StackLayout Margin="10,10,10,10">
+            <StackLayout>
+
+                <Entry Placeholder="Enter Your Name"
+                                   x:Name="NameEntry"/>
+                <Entry Placeholder="Contact Number"
+                         Keyboard="Telephone" x:Name="ContactDetails"/>
+
+            </StackLayout>
+
+            <Picker x:Name="slotpicker"
+                    Title="Select Time Slot">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>7:00AM-9:00AM</x:String>
+                        <x:String>9:00AM-11:00AM</x:String>
+                        <x:String>12:00PM-2:00PM</x:String>
+                        <x:String>2:00PM-4:00PM</x:String>
+                        <x:String>4:00PM-6:00PM</x:String>
+                        <x:String>6:00PM-8:00PM</x:String>
+                        <x:String>8:00PM-10:00PM</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <StackLayout Orientation="Horizontal" Margin="0,10,0,10">
+                <Label Text="Sport :" FontSize="Medium"/>
+                <Label x:Name="sportnamelabel" FontSize="Medium"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" Margin="0,0,0,10">
+                <Label Text="Centre :" FontSize="Medium"/>
+                <Label x:Name="centrenamelabel" FontSize="Medium"/>
+            </StackLayout>
+
+            <Label Text="Payment Method" FontSize="Medium" />
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Start" Margin="0,10,0,0">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Cash" FontSize="Medium"/>
+                    <RadioButton x:Name="paymentradio" Value="Cash" GroupName="PaymentType"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="PayTM" FontSize="Medium"/>
+                    <RadioButton Value="PayTm" GroupName="PaymentType"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Wallet" FontSize="Medium"/>
+                    <RadioButton Value="Wallet" GroupName="PaymentType"/>
+                </StackLayout>
+            </StackLayout>
+
+            <Button Text="Book Slot" Margin="0,20,0,0"
+                    x:Name="BookSlotBtn"
+                    BackgroundColor="#FF5722" TextColor="White"
+                    Clicked="BookSlotBtn_Clicked"
+                    HorizontalOptions="Center" WidthRequest="150"
+                    CornerRadius="20" />
+            <Button Text="Home" Margin="0,20,0,0"
+                    x:Name="BacktoHome" Clicked="BacktoHome_Clicked"
+                    BackgroundColor="#FF5722" TextColor="White"
+                    HorizontalOptions="Center" WidthRequest="150" VerticalOptions="End" IsVisible="False"
+                    CornerRadius="20" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

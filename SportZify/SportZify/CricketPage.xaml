@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SportZify.CricketPage"
+             xmlns:xm="clr-namespace:SportZify.ViewModels"
+             Visual="Material"
+             Title="Cricket">
+    
+    <ContentPage.BindingContext>
+        <xm:CricketViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <Grid RowDefinitions="Auto,*">
+            
+            <Label Text="FEATURED CLUBS" FontSize="Large" 
+                   Grid.Row="0" HorizontalOptions="Center" FontAttributes="Bold"/>
+
+            <CollectionView ItemsSource="{Binding Clubs}" Grid.Row="1"
+                            x:Name="ClubsView"
+                            SelectionMode="Single"
+                            SelectionChanged="ClubsView_SelectionChanged">
+
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical"
+                                     Span="2"
+                                     HorizontalItemSpacing="10"
+                                     VerticalItemSpacing="10" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame HasShadow="True" Margin="10"
+                                   CornerRadius="20"
+                                   BackgroundColor="#FFCCBC">
+                            <StackLayout>
+                                <Image Source="{Binding ClubImageURL}"
+                                           WidthRequest="300" HeightRequest="200"
+                                           Aspect="AspectFill"/>
+                                <Label Text="{Binding ClubName}" FontAttributes="Bold"
+                                       TextColor="Black" FontSize="Subtitle"/>
+                                <Label Text="{Binding ClubCharge,StringFormat='Rs. {0}'}" />
+                            </StackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

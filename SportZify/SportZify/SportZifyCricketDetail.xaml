@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SportZify.SportZifyCricketDetail"
+              Visual="Material"
+             xmlns:helpers="clr-namespace:SportZify.Helpers">
+
+
+    <ContentPage.Content>
+        <ScrollView>
+            <ScrollView.Content>
+                <Grid RowDefinitions="300,Auto,Auto,Auto,Auto">
+                    <Image Source="{Binding ClubImageURL}"
+                   Grid.Row="0" BackgroundColor="Black"
+                   Aspect="AspectFill" />
+
+                    <StackLayout Grid.Row="1" >
+                        <Label Text="{Binding ClubName}"
+                       HorizontalTextAlignment="Center"
+                       FontSize="Title" TextColor="Black"/>
+
+                        <Label Text="{Binding ClubCity}"
+                       HorizontalTextAlignment="Center"
+                       FontSize="Subtitle" TextColor="Black"
+                       />
+                        <Label Text="{Binding ClubLocation}"
+                       HorizontalTextAlignment="Center"
+                       FontSize="Subtitle" TextColor="Black"
+                       />
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" Spacing="10"
+                             Grid.Row="2" Padding="10">
+                        <Image Source="{FontImage FontFamily=FontAwesome,
+                                    Color=Black, 
+                                    Glyph={x:Static helpers:IconFont.Cash}}"/>
+
+                        <Label Text="{Binding ClubCharge}"
+                           VerticalTextAlignment="Center"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" Spacing="10"
+                             Grid.Row="3" Padding="10">
+                        <Image Source="{FontImage FontFamily=FontAwesome,
+                                    Color=Black, 
+                                    Glyph={x:Static helpers:IconFont.Phone}}"/>
+
+                        <Label Text="{Binding ClubContact}"
+                           VerticalTextAlignment="Center"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" 
+                                 HorizontalOptions="Center"
+                                 Spacing="10"
+                             Grid.Row="4">
+
+                        <Button ImageSource="{FontImage FontFamily=FontAwesome,
+                                    Color=White, 
+                                    Glyph={x:Static helpers:IconFont.Youtube}}" 
+                                Text="Explore"
+                                BackgroundColor="#FF5722"
+                                x:Name="CricketVideo" Clicked="CricketVideo_Clicked"/>
+
+                        <Button ImageSource="{FontImage FontFamily=FontAwesome,
+                                    Color=White, 
+                                    Glyph={x:Static helpers:IconFont.BookAlert}}" 
+                                Text="Book Slot"
+                                BackgroundColor="#FF5722"
+                                x:Name="CricketBook" Clicked="CricketBook_Clicked"/>
+
+                    </StackLayout>
+                </Grid>
+            </ScrollView.Content>
+        </ScrollView>
+
+    </ContentPage.Content>
+
+
+</ContentPage>

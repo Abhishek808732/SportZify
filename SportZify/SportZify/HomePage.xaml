@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+            xmlns:sportzify="clr-namespace:SportZify"
+            x:Class="SportZify.HomePage"
+            Visual="Material"
+            BarTextColor="White"
+            BarBackgroundColor="#FF5722"
+            Title="SportZify">
+    <!--Pages can be added as references or inline-->
+    <TabbedPage.Children>
+        <sportzify:BadmintonPage IconImageSource="https://img.icons8.com/ios/452/badminton.png"/>
+        <sportzify:CricketPage IconImageSource="https://cdn2.iconfinder.com/data/icons/maki/100/cricket-512.png"/>
+        <sportzify:GymPage IconImageSource="https://i.pinimg.com/originals/f4/48/33/f4483345d7df4c697559ad174cbe1057.png"/>
+        <sportzify:DiscoverPage IconImageSource="https://static.thenounproject.com/png/953674-200.png"/>
+    </TabbedPage.Children>
+    
+</TabbedPage>

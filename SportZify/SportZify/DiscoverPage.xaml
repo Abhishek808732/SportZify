@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SportZify.DiscoverPage"
+             Visual="Material"
+             Title="About" BackgroundColor="Wheat">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid RowDefinitions="100,*,100,150,100,50,50,200" Padding="20,0,15,0">
+                <Label Text="About US" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center"
+                               Grid.Row="0" FontSize="40" TextColor="Purple"/>
+                <Label Text="Sportzify is a team of sports lovers with a vision to facilitate sports through its online platform. From facility booking to sports event registration, we offer a range of services to players, sports facility owners, and sports event organizers.
+ Our approach is simple—to design something that we will LOVE to use ourselves." Grid.Row="1" FontSize="25"/>
+                <Label Text="Benefits" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center"
+                               Grid.Row="2" FontSize="40" TextColor="Purple"></Label>
+                <StackLayout Grid.Row="3">
+                    <Label Text="Quick Booking" HorizontalOptions="Center" FontSize="25"/>
+                    <Label Text="Map based search" HorizontalOptions="Center" FontSize="25"/>
+                    <Label Text="Easy payments" HorizontalOptions="Center" FontSize="25"/>
+                    <Label Text="Maximum Listings" HorizontalOptions="Center" FontSize="25"/>
+                </StackLayout>
+
+                <Label Text="Contact US" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center"
+                               Grid.Row="4" FontSize="40" TextColor="Purple"/>
+                <Label Text="Email : sportzify@gmail.com" Grid.Row="5" FontSize="25" HorizontalOptions="Center"/>
+                <Label Text="Contact No. : 8877665544" Grid.Row="6" FontSize="25" HorizontalOptions="Center"/>
+                <Button Text="Thank You for visiting US." Grid.Row="7" BackgroundColor="Purple"
+                        CornerRadius="100" FontAttributes="Italic" FontSize="Title" WidthRequest="100" HeightRequest="100"/>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

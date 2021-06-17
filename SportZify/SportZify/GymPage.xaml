@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SportZify.GymPage"
+             xmlns:xm="clr-namespace:SportZify.ViewModels"
+             Visual="Material"
+             Title="Gym">
+    <ContentPage.BindingContext>
+        <xm:GymViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <Grid RowDefinitions="30,Auto,170">
+            
+            <Label Text="BEST SELECTS" FontSize="Large" 
+                   HorizontalOptions="Center" Grid.Row="0" FontAttributes="Bold"/>
+
+            <CollectionView ItemsSource="{Binding Gyms}" Grid.Row="1"
+                            x:Name="GymsView"
+                            SelectionMode="Single"
+                            SelectionChanged="GymsView_SelectionChanged">
+
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical"
+                                     VerticalItemSpacing="10" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame HasShadow="True" Margin="10"
+                                   CornerRadius="20"
+                                   BackgroundColor="#FFCCBC">
+                            <StackLayout>
+                                <Image Source="{Binding GymImageURL}"
+                                           WidthRequest="300" HeightRequest="200"
+                                           Aspect="AspectFill"/>
+                                <Label Text="{Binding GymName}" FontSize="Medium"
+                                       TextColor="Black" FontAttributes="Bold"/>
+                                <Label Text="{Binding GymCharge,StringFormat='Rs. {0}'}" />
+                            </StackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+
+            <CollectionView ItemsSource="{Binding Gyms}" Grid.Row="2">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Horizontal" ItemSpacing="20" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout WidthRequest="200" HeightRequest="130">
+                            <Frame HasShadow="True"
+                                   CornerRadius="10"
+                                   BackgroundColor="#FFCCBC"
+                               Margin="5,10,5,0">
+                                <StackLayout>
+                                    <Image Source="{Binding GymImageURL}"
+                                           WidthRequest="180" HeightRequest="120"
+                                           Aspect="AspectFill"/>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

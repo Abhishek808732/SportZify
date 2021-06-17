@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SportZify.App">
+    <Application.Resources>
+
+        <Style TargetType="NavigationPage">
+            <Setter Property="BarBackgroundColor" Value="#E64A19"/>
+            <Setter Property="BarTextColor" Value="White"/>
+        </Style>
+        
+    </Application.Resources>
+</Application>
